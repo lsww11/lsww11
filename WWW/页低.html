@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #wd{
+        max-width: 100%;
+        height:180px;
+        background-color: rgb(173,224,199);
+        box-shadow: 0px -3px 5px 1px #dcdcdc inset;  /*盒子阴影：水平阴影 垂直阴影 模糊距离 阴影尺度 阴影颜色 inset(外部阴影)--outset(内部阴影)*/
+        margin: 0% auto;
+        background-repeat: no-repeat;
+        background-position: center;
+		overflow:hidden;
+    }
+    #wd .f,#wd .c,#wd .r{
+        height:160px;
+		float:left;
+    }
+
+    #wd .f,
+    #wd .r{
+		width:30%;
+		}
+	#wd .c{
+		width:40%;  
+	    }   
+@media only screen and (max-width: 700px) {
+
+    #wd{
+        height: 480px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #wd .f,#wd .c,#wd .r{
+        float: none; 
+        width: 100%;
+        height: 160px;
+    }
+
+    #wd .f{
+        line-height: 50px;
+    }
+    #wd .c{
+        line-height: 15px;
+        border-left: hidden;
+    }
+    #wd .r{
+        display: block;
+    }
+} 
+		.r{
+         
+            color:rgb(0, 0, 0);
+            margin:0 auto;
+        }
+        .r_text, .r_title{
+            width:100%;
+        }
+        .f_title,
+	   .r_title{
+   
+		 color: #000000;
+           text-height:10px;
+		   font-size:18px;
+		   font:bold 18px 'arial' ,'sans-serif' , 楷体;
+		   padding-left:1.5em;
+           margin-bottom: 12px;
+		   }
+           .r_text{
+            font-size: 1vw;
+		   	height:42%;
+               line-height: 25px;
+			font: bold 43.5% 'sans-serif' , 宋体;
+			padding-left:2.5em;
+           }
+           .f_column{
+            overflow: hidden;
+            max-width: 100%;
+            width: 100%;
+            height: 100%;
+            float: left;
+           }
+           .f_lanmu{
+            width: 100%;
+            height: 103px;
+            display: flex;
+            float: left;
+           margin-left: 5.5%;
+            flex-wrap: nowrap;
+            overflow: hidden;
+           }
+           .f_lanmu_lm{
+    
+            float: left;
+            width: 27.5%;
+            height: 20.5%;
+            background: rgb(173,224,199);
+            margin:5px;
+            align-items: center;
+            justify-content: center;
+            font: bold 12px 'arial' , 宋体;
+            font-size: 1vw;
+            float: left;
+            
+            color: #000;
+            text-align: center;
+            text-align: center;/*文本水平对齐水平：居中 */
+            line-height:157.5%; /*行高：元素高度*/
+            cursor: pointer;/*光标：指向者*/
+            /* box-shadow: 0px -4px 2px 0px #cae0d5 inset; */
+            overflow: hidden;
+        }
+        .m{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        }
+        .lmtb1::before{
+        float: left;
+        content: "";
+        display: inline-block; 
+        width: 25px;
+        height: 20px;
+        background: url("img/主页图标.png") no-repeat center center;
+        background-size: 20px;
+
+        color: #000;
+        }
+        .lmtb2::before{
+            float: left;
+        content: "";
+        display: inline-block; 
+        width: 25px;
+        height: 20px;
+        background: url("img/网络图标.png") no-repeat center center;
+        background-size: 20px;
+        }
+        .lmtb3::before{
+            float: left;
+        content: "";
+        display: inline-block; 
+        width: 25px;
+        height: 20px;
+        background: url("img/图库图标.png") no-repeat center center;
+        background-size: 25px;
+
+        }
+        .lmtb4::before{
+            float: left;
+        content: "";
+        display: inline-block; 
+        width: 25px;
+        height: 20px;
+        background: url("img/链接图标.png") no-repeat center center;
+        background-size: 30px;
+
+        }
+        .lmtb5::before{
+            float: left;
+        content: "";
+        display: inline-block; 
+        width: 25px;
+        height: 20px;
+        background: url("img/排行图标.png") no-repeat center center;
+        background-size: 20px;
+
+        }
+        .lmtb6::before{
+            float: left;
+        content: "";
+        display: inline-block; 
+        width: 25px;
+        height: 20px;
+        background: url("img/文案图标.png") no-repeat center center;
+        background-size: 18px;
+
+        }
+        .lmtb7::before{
+            float: left;
+        content: "";
+        display: inline-block; 
+        width: 25px;
+        height: 20px;
+        background: url("img/影音图标.png") no-repeat center center;
+        background-size: 45px;
+        }
+        .lmtb8::before{
+            float: left;
+        content: "";
+        display: inline-block; 
+        width: 25px;
+        height: 20px;
+        background: url("img/特效图标.png") no-repeat center center;
+        background-size: 30px;
+
+        }
+        .lmtb9::before{
+            float: left;
+        content: "";
+        display: inline-block; 
+        width: 25px;
+        height: 20px;
+        background: url("img/关于图标.png") no-repeat center center;
+        background-size: 20px;
+
+        }
+        
+        .c_contact{
+            display: flex;
+            width: 100%;
+            height: 100%;
+            background: rgb(173,224,199);
+        }
+        /* .c_contact>div{
+            display: flex;
+            width: 30%;
+            height: 100%;
+            background: #47e7a7;
+            margin:0 10px;
+        } */
+        .contact1,.contact2,.contact3{
+            float: left;
+            width: 110px;
+            background: rgb(173,224,199);
+            margin-top: 18px;
+        }
+        .contact1{
+            margin-left: 44px;
+        }
+        .contact2{
+            margin-left:20px;
+            margin-right: 20px;
+        }
+        .contact3{
+            margin-right: 44px;
+        }
+        .contact_lx{
+            float: left; 
+            background: rgb(173,224,199);
+           
+        }
+        
+        .name{
+            float: left;
+            width: 100%;
+            height: 15%;
+            background: rgb(173,224,199);
+            text-align: center;
+            overflow: hidden;
+            margin: 3px 0;
+            font-size: 1vw;
+        }
+        .bq{
+            font-size: 1.2vw;
+            float: left;
+            width: 100%;
+            /* height: 100px; */
+            text-align: center;
+            background: rgb(255, 255, 255);
+            padding: 10px 0;
+        }
+        .f_lanmu_lm li{
+            color: rgb(0, 106, 255);
+
+        }
+</style>
+<body>
+    <div id="wd" >
+        <div class="f">
+            <div class="f_column">
+                <h3 class="f_title">其他栏目</h3>
+            <div class="f_lanmu">
+                <ul class="m">
+                    <div class="f_lanmu_lm"><a href="首页.html" target="_blank"><samp class="lmtb1"></samp><li>网站首页</li></a></div>
+                    <div class="f_lanmu_lm"><a href="https://www.baidu.com/" target="_blank"><samp class="lmtb2"></samp><li>全球网络</li></a></div>  
+                    <div class="f_lanmu_lm"><a href="图库.html" target="_blank"><samp class="lmtb3"></samp><li>图片图库</li></a></div>
+                    <div class="f_lanmu_lm"><a href="#" target="_blank"><samp class="lmtb4"></samp><li>友情链接</li></a></div>
+                    <div class="f_lanmu_lm"><a href="#" target="_blank"><samp class="lmtb5"></samp><li>访客排行</li></a></div>
+                    <div class="f_lanmu_lm"><a href="文案.html" target="_blank"><samp class="lmtb6"></samp><li>随笔文案</li></a></div>
+                    <div class="f_lanmu_lm"><a href="视频.html" target="_blank"><samp class="lmtb7"></samp><li>影音专区</li></a></div> 
+                    <div class="f_lanmu_lm"><a href="特效.html" target="_blank"><samp class="lmtb8"></samp><li>特效专区</li></a></div>
+                    <div class="f_lanmu_lm"><a href="#" target="_blank"><samp class="lmtb9"></samp><li>关于网站</li></a></div>
+                </ul>
+            </div>
+            </div>
+
+        </div>
+        <div class="c">
+            <div class="c_contact">
+                <div class="contact1">
+                    <div class="contact_lx"><img src="img/wx.jpg" style="width:100% ; height: 100%;"></div>
+                    <div class="name">我的微信</div>
+                </div>
+                <div class="contact2">
+                    <div class="contact_lx"><img src="img/qq.jpg" style="width:100% ; height:100%;"></div>
+                    <div class="name">我的QQ</div>
+                </div>
+                <div class="contact3">
+                    <div class="contact_lx"><img src="img/weibo.png" style="width:100% ; height:100%;"></div>
+                    <div class="name">官方微博</div>
+                </div>
+        </div></div>
+        <div class="r">
+            <h3 class="r_title">版权声明</h3>
+                <div class="r_text">本站原创内容版权规定，转载请注明出处。<br>
+                <p>本站部分资源收集于网络，只做学习和交流使用，</p>
+                <p>未经原作者允许不得转载本文内容，否则将视为侵权,</p>
+                <p>版权归原作者所有。</p>
+                </div>
+        </div>
+    
+    
+    </div>
+    <div class="bq">
+        <p>Copyright © 2022 - present 忘忧君馆 版权所有</p>
+            <p style="text-align: center;">本站已稳定运行：<span id="htmer_time" style="color: #09c;">00年00天00时00分00秒</span>
+    <script>
+    function secondToDate(second) {
+    if (!second) {
+        return 0;
+    }
+    var time = new Array(0, 0, 0, 0, 0);
+    if (second >= 365 * 24 * 3600) {
+        time[0] = parseInt(second / (365 * 24 * 3600));
+        second %= 365 * 24 * 3600;
+    }
+    if (second >= 24 * 3600) {
+        time[1] = parseInt(second / (24 * 3600));
+        second %= 24 * 3600;
+    }
+    if (second >= 3600) {
+        time[2] = parseInt(second / 3600);
+        second %= 3600;
+    }
+    if (second >= 60) {
+        time[3] = parseInt(second / 60);
+        second %= 60;
+    }
+    if (second > 0) {
+        time[4] = second;
+    }
+    return time;
+    }
+    function setTime() {
+        /*此处为网站的创建时间*/
+    var create_time = Math.round(new Date(Date.UTC(2022, 08, 24, 00, 00, 00)).getTime() / 1000);
+    var timestamp = Math.round((new Date().getTime() + 8 * 60 * 60 * 1000) / 1000);
+    currentTime = secondToDate((timestamp - create_time));
+    currentTimeHtml = currentTime[0] + '年' + currentTime[1] + '天'
+            + currentTime[2] + '时' + currentTime[3] + '分' + currentTime[4]
+            + '秒';
+    document.getElementById("htmer_time").innerHTML = currentTimeHtml;
+    }
+    setInterval(setTime, 1000);
+    </script></p>								
+    </div>
+</body>
+
+</html>

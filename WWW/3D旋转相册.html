@@ -1,0 +1,1637 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>个人网站开发——忘忧君馆</title>
+<link rel="icon" href="img/logo图标.png" sizes="64x64">
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+</head>
+<!-- 头部样式 -->
+<style>
+
+#main{
+	width:100%;
+	overflow:hidden;
+    box-shadow: 0px 1px 15px #c5c2c2;
+    background: lightgreen;
+  
+    
+}
+
+#main .main-left{
+	width:25%;
+	height:100px;
+	/* background:lightgreen; */
+	float:left;
+   
+}
+#main .main-center{
+	width:50%;
+	height:100px;
+	/* background:lightgreen; */
+	float:left;
+}
+
+#main .main-right{
+	width:25%;
+	height:100px;
+	/* background:lightgreen; */
+	float:right;
+    cursor: pointer;
+  
+   
+}
+#footer{
+	height:35px;
+	/* background:lightgreen; */
+    /* font-size: 1.6vw; */
+}
+    .main-center{
+        width:400px ;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+         margin: 0 auto;
+    }
+    .title{
+        position: relative;
+        font-size: 2rem;
+        color:rgb(42,166,226);
+        /* text-shadow: 2px -3px 5px 1px #000 inherit; 文字阴影 */
+        /* box-shadow: 0px -3px 5px 1px #72bae1 inset;  盒子阴影：水平阴影 垂直阴影 模糊距离 阴影尺度 阴影颜色 inset(外部阴影)--outset(内部阴影) */
+    }
+    .title::after{
+        content: "忘忧君馆";
+        color:transparent;
+        position: absolute;
+        top: 0;
+        left: 0;
+        clip-path: circle(25px at 50% 50%);
+        animation: move 5s infinite;
+        background-image: url('img/标题颜色.gif');
+         background-color: text;
+        -webkit-background-clip: text;
+    }
+    @keyframes move {
+        0%{
+            clip-path: circle(25px at 0 50%);
+        }
+        50%{
+            clip-path: circle(25px at 100% 50%)
+        }
+        100%{
+            clip-path: circle(25px at 0 50%)
+        }
+    }
+    .logo img{
+        width:60px;
+        height:60px;
+    }
+
+   
+   body{
+        margin: 0;
+        background-color: rgb(237, 236, 236);
+        font-size: 1.2vw;
+
+    }
+    .m{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;}
+    .btn{
+            float: left;
+            width: 12.5%;
+            height: 35px;
+            color: #000;
+            background-color: #ade0c7;
+            text-align: center;/*文本水平对齐水平：居中 */
+            line-height: 35px;/*行高：元素高度 */
+            cursor: pointer;/*光标：指向者*/
+            /* box-shadow: 0px -4px 2px 0px #cae0d5 inset; */
+        }
+        .btn li:hover{
+            color: #fff;
+            background-color: #3390ff;
+            
+        }
+        a{
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;/*光标：指向者*/
+   }
+   .pen{top: 5px;
+	   margin: 10px 0;
+	   }
+	   .wenan{
+        
+		   width:100%;
+		   height:25%;
+		   /* background-color:lightgreen; */
+		   text-height:10px;
+		   float:left;
+		   font-size:17px;
+		   font:bold 17px 'arial' ,'sans-serif' , 楷体;
+		   padding-left:2em;
+           border-left: 1px dashed rgb(0, 0, 0);
+		   }
+		  .wenan1{
+            margin:0 auto;
+			width:100%;
+		   	height:75%;
+		   	/* background-color:lightgreen; */
+		  	float:left;
+			font:italic bold 7px 'arial' , 宋体;
+			padding-left:2em;
+            border-left: 1px dashed rgb(0, 0, 0);
+			  }
+			  .yanse{
+				  background-color: #3390ff;
+                  color: #fff;
+              } 
+ 
+    .guan{
+        top: 5px;
+	   margin: 10px 5px;
+	   }
+	   .wen{
+        
+		   width:100%;
+		   height:25%;
+		   /* background-color:lightgreen; */
+		   text-height:10px;
+		   float:right;
+		   font-size:17px;
+		   font:bold 17px 'arial' ,'sans-serif' , 楷体;
+		   padding-left:2em;
+           border-right: 1px dashed rgb(0, 0, 0);
+  
+		   }
+		  .wen1{
+            
+			width:100%;
+		   	height:75%;	
+		  	float:right;
+			font:italic bold 6px 'arial' , 宋体;
+            border-right: 1px dashed rgb(0, 0, 0);
+            text-indent:15px; /*文本缩进  缩进*/
+			  }
+              .wen1_ge{
+                margin: 7px 0px;
+                margin-left: -11px;
+                font: bold 13px 'arial' ,'sans-serif' ,楷体;
+              }
+              .user{
+                color: rgb(3, 147, 231);
+                text-decoration: rgb(1, 141, 255) 0.5px underline; 
+                margin-left: 2px;
+                font: bold 13px 'arial' ,'sans-serif' ,楷体;
+              }
+              .user:hover{
+                color: rgb(3, 147, 231);
+                text-decoration: rgb(1, 141, 255) 0.5px underline; /*下划线*/
+                text-shadow:0.6px 0.6px rgb(0, 0, 0);/* 文字阴影*/
+              }
+    /* 位置 */
+    .position{
+    height: 27px;
+    background: rgb(255, 255, 255);
+    margin: 18px 23px;
+    box-shadow: 0px 1px 15px  #a2a2a2;
+    font-size: 7px;
+   }
+   .position_left{
+    float: left;
+    width: 80%;
+    text-indent:15px;
+    margin: 5px 4px;
+   }
+   .narrow::before{
+    content: "->";
+    width:115px;
+    height: 220px;
+    background-size: 200px;
+   }
+   .narrow{
+    font-style: inherit;
+   }
+   .position_left a:hover{
+            color:#3390ff;
+   }
+   .narrw_g{
+    margin: 0 4px;
+   }
+   .position_right{
+    float: right;
+    width: 27px;
+    height: 27px;
+    /* background: #000; */
+    margin-right: 10px;
+    border-radius:50%;
+   }	  
+</style>
+
+
+<body>
+<!-- 主标 -->
+<div id="main">
+<!-- 左 -->
+	<div class="main-left">
+        <div class="wen">
+            <h5 class="guan">馆主：<a class="user" href="馆主.html">lsww11</a></h5>
+        </div>
+            <div class="wen1">
+            <h6 class="wen1_ge">个性签名:</h6>
+            <p>远赴人间惊鸿宴，一睹人间盛世颜。</p>
+           </div>
+    </div>
+<!-- 大标题 -->
+    <div class="main-center">
+        <div class="logo"><img src="img/logo图标.png" alt="logo图标"></div>
+            <h5 class="title">忘忧君馆</h5>
+    </div>
+<!-- 右 -->
+<div class="main-right">
+        <div class="wenan"><a href="文案.html">
+            <h5 class="pen">随 笔：</h5>
+        </div>
+            <div class="wenan1">
+            <p>没有一个冬天不可逾越，没有一个春天不会来临。</p>
+            <p>最慢的步伐不是跬步，而是徘徊，</p>
+            <p>最快的脚步不是冲刺，而是坚持。</p>
+        </div></a>
+    </div>
+<!-- 导航 -->
+    <div id="footer">
+        <ul class="m">
+            <div class="btn"><a href="首页.html"><li>首 页</li></a></div>
+            <div class="btn"><a href="时光.html"><li>时 光</li></a></div>
+            <div class="btn"><a href="博客.html"><li>博 客</li></a></div>
+            <div class="btn"><a href="文案.html"><li>文 案</li></a></div>
+            <div class="btn"><a href="图库.html"><li>图 库</li></a></div>
+            <div class="btn"><a href="视频.html"><li>视 频</li></a></div>
+            <div class="btn"><a href="风景.html"><li>风 景</li></a></div>          
+            <div class="btn"><a href="特效.html"><li class="yanse">特 效</li></a></div>
+        </ul>
+    </div>
+ </div>
+<!--位置-->
+<div class="position">
+    <div class="position_left"><a class="narrw_g" href="首页.html">首页</a><i class="narrow"><a class="narrw_g" href="特效.html">特效</a></i><i class="narrow"><a class="narrw_g" href="3D旋转相册.html">3D旋转相册</a></i></div>
+    <div class="position_right"><a href="#"><img src="img/用户图标.png" style="width: 100%; "></a></div>
+</div> 
+ </body>   
+<!-- 主标结束 -->
+
+
+
+
+
+
+
+
+
+
+<!-- 主内容样式 -->
+<style>
+    /* img {
+  max-width: 100%;
+  display: block;
+} */
+
+
+.ip{
+        font: 1.2em Helvetica, Arial, sans-serif;
+        margin: 10px;
+        padding: 0;
+        background-color:rgb(237, 236, 236);
+        /* font-size: 1.2rem; */
+        font-size: 1.2vw;
+      }
+      .in_content {
+        max-width: 100%;
+        /* height: 1580px; */
+        height: auto;
+        margin: 4px 11px;
+        overflow: hidden;
+        background: #ffffff;
+      }
+
+      .content_left,
+      .content_right {
+        background-color: rgb(255, 255, 255);
+      }
+
+      @media screen and (min-width: 900px) {
+        .in_content {
+          display: flex;
+          background: rgb(237, 236, 236);
+        }
+
+        .content_left {
+          flex: 10;
+          margin-right: 2%;
+        }
+
+        .content_right {
+            max-width: 350px;
+          flex: 4;
+          margin-bottom: 15px;
+        }
+        .nr_bt{
+            margin: 0;
+        }
+        .position_right{
+            display: none;
+        }
+      }
+      @media(max-width: 895px) {
+    .wenan,
+    .wenan1,
+    .wen1,
+    .wen,
+    .content_right,
+    .sj_zz{
+        display: none;
+    }
+    .main-center{
+        max-width: 900px;
+        width: 900px;
+    }
+   
+    .nr_bt{
+
+        margin-top: 0;
+        padding-bottom: 8%;
+    }
+    
+    .nr{
+        font-size: 1.2vw;
+    }
+  
+}
+/* @media (min-width: 601px) {
+最大化显示
+} */
+      
+   .content_left{
+        height: 100%;/*自适应高度*/
+        background-color: rgb(255, 255, 255);/*背景颜色*/
+
+    }
+  
+    .content_left{
+
+        background: #ffffff;
+
+        
+    }
+    .content_left>img{
+        width: 100%;
+        height: 100%;
+    }
+    .nr{
+        background: #ffffff;
+         padding: 20px;
+        overflow: hidden;
+        position: relative;
+    }
+   
+ 
+.nr_bt{
+    width: 100%;
+    /* height: 28px; */
+    background: rgb(255, 255, 255);
+    float: left;
+    font-size: 18px;
+    margin: 3px -20px 14px -20px;
+    padding: 5px 15px;
+    border-left: 5px solid #3390ff;
+ 
+}
+.nr_znr{
+    
+    width: 100%;
+    /* height: 70px; */
+    background: rgb(255, 255, 255);
+    float: left;
+    font: bold 14px 'arial' , 宋体;
+    margin: 0;
+    line-height: 2em;
+    color: rgb(0, 0, 0);
+    /* text-indent: 2em; */
+    padding-top: 1em;
+    
+}
+    .nr_znr>a>img{
+        width: 100%;
+        /* height: 350px; */
+        border: 1px #939393 dotted;
+        box-shadow: 0px -3px 5px 1px #939393 inset;/*盒子阴影*/
+    }
+.nr_sj{
+    max-width: 100%;
+    width: 100%;
+    height:auto;
+    background: #ffffff;
+    float: right;
+    font: bold 12px 'arial' , 宋体;
+    color: #6e6868;
+    margin: 0;
+    border-bottom: 1px #3e3e3e dotted;
+}
+/* .sj_zz{
+    width: 25px;
+    background: #ffffff;
+    float: left;
+
+} */
+.sj_yuan1{
+    float: left;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border-radius:50%;
+    position: relative;
+    border: 1px solid rgb(0 0 0);
+}
+.sj_yuan2{
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: #ffffff;
+    border-radius:50%;
+    margin: 1px; 
+    
+}
+.sj_yuan2 img{
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+}
+.gxsj1{
+    float: left;
+    display: flex;
+    width: 116x;
+    background:rgb(255, 255, 255);
+    margin:0;
+    align-items: center;
+}
+.gxsj2{
+    float: left;
+    width: 25px;
+    background:rgb(255, 255, 255);
+}
+.gxsj2::before {
+    content: "";
+    display: inline-block; 
+    width: 25px;
+    height: 25px;
+    background: url("img/时间图标.png") no-repeat center center;
+    background-size: 25px;
+
+}
+.gxsj3{
+    float: right;
+    display: flex;
+    width: 47px;
+    background:rgb(255, 255, 255);
+    color: #6e6868;
+    align-items: center;
+}
+.gxsj3:hover{
+    color: #3390ff;
+}
+.gxsj4{
+    float: left;
+    width: 20px;
+    background:rgb(255, 255, 255);
+    
+}
+.gxsj4::before{
+    content: "";
+    display: inline-block; 
+    width: 22px;
+    height: 22px;
+    background: url("img/菜单图标.png") no-repeat center center;
+    background-size: 20px;
+}
+.gxsj5{
+    float: left;
+    display: flex;
+    /* width: 41px; */
+    background:rgb(255, 255, 255);
+    align-items: center;
+    margin-left: 0.5%;
+}
+.gxsj6{
+    float: left;
+    width: 17px;
+    background:rgb(255, 255, 255);
+    
+}
+.gxsj6::before{
+    content: "";
+    display: inline-block; 
+    width: 16px;
+    height: 24px;
+    background: url("img/信息图标.png") no-repeat center center;
+    background-size: 13px;
+
+}
+.gxsj_r{
+    float: left;
+    width: 49px;
+    background: #ffffff;
+}
+.gxsj7{
+    display: flex;
+    float: right;
+    /* width: 42px; */
+    background:rgb(255, 255, 255);
+    padding-right: 35%;
+    align-items: center;
+}
+.gxsj8{
+    float: right;
+    width: 17px;
+    background:rgb(255, 255, 255);
+}
+.gxsj8::before{
+    content: "";
+    display: inline-block; 
+    width: 16px;
+    height: 24px;
+    background: url("img/小眼睛图标.jpg") no-repeat center center;
+    background-size: 13px;
+
+}
+.gxsj9{
+    float: left;
+    display: flex;
+    /* width: 41px; */
+    background:rgb(255, 255, 255);
+    align-items: center;
+    
+    margin-left: 0.5%;
+}
+.gxsj10{
+    float: left;
+    width: 16px;
+    background:rgb(255, 255, 255);
+    
+}
+.gxsj10::before{
+    content: "";
+    display: inline-block; 
+    width: 16px;
+    height: 24px;
+    background: url("img/字数.jpg") no-repeat center center;
+    background-size: 13px;
+}
+.nr_sj2{
+    max-width: 100%;
+    width: 100%;
+    height:auto;
+    /* background: #ffffff; */
+    float: right;
+    font: bold 12px 'arial' , 宋体;
+    color: #000000;
+    margin: 0;
+    border-bottom: 1px #3e3e3e dotted;
+    background-color: #ade0c7;
+    border-bottom: 15px solid rgb(237, 236, 236);
+}
+.gxsj11{
+    float: left;
+    display: flex;
+    width: 100%;
+    /* color: #231f20; */
+    align-items: center;
+    text-indent: 1em;
+    font-size: 15px;
+    border-left: 5px solid #3390ff;
+}
+.gxsj11:hover{
+    color: #3390ff;
+}
+.gxsj12{
+    float: left;
+    width: 25px;
+}
+.gxsj12::before{
+    content: "";
+    display: inline-block; 
+    width: 22px;
+    height: 22px;
+    background: url("img/菜单图标.png") no-repeat center center;
+    background-size: 30px;
+}
+.ciyun1{
+    list-style-type: none;
+    background-color:#edecec;
+    width: 100%;
+    float: left;
+    border-bottom: 15px solid rgb(237, 236, 236);
+    display: flex;
+}
+.ciyun1>div{
+    float: left;
+    width: 20%;
+    color: #fff;
+    text-align: center;
+    line-height: 35px;
+    cursor: pointer;
+   
+}
+.ciyun1>div:hover{
+    transform: scale(0.9);/*缩小*/
+    transition: all .1s ease-in 0s;
+}
+.btn1{background: rgb(248, 159, 159);}
+.btn2{background: rgb(237, 186, 76);margin-left:1%;}
+.btn3{background: rgb(230, 121, 199);margin: 0 1%;}
+.btn4{background: rgb(155, 232, 74);margin-right:1%;}
+.btn5{background: rgb(85, 179, 219);}
+
+.nr_sj3{
+    max-width: 100%;
+    width: 100%;
+    height:70px;
+    float: right;
+    font: bold 14px 'arial' , 宋体;
+    margin: 0;
+    border-bottom: 1px #3e3e3e dotted;
+    border-bottom: 15px solid rgb(237, 236, 236);
+    display: flex;  
+}
+.nr_sj3>a{
+    width: 50%;
+    padding: 11px;
+    line-height: 24px;
+}
+.sj3_btn1{
+    float: left;
+    border-right: 1px #999999 dotted;
+    background:rgb(255, 255, 255);
+    color: #000;
+    text-align: center;
+}
+.sj3_btn2{
+    float: right;
+    color: #000;
+    text-align: center;
+}
+.gxsj13,
+.gxsj15{
+    display: flex;
+    width: 80px;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+}
+ .sj3_btn1:hover{
+    color: #ffffff;
+    background: #3390ff;
+}
+.gxsj14,
+.gxsj16{
+    float: left;
+    width: 20px;
+
+    text-align: center;
+    
+}
+.gxsj14::before{
+    content: "<";
+    display: inline-block; 
+    width: 22px;
+    height: 25px;
+    /* background: url("img/左图标.png") no-repeat center center; */
+    background-size: 20px;
+}
+.gxsj16:before{
+    content: ">";
+    display: inline-block; 
+    width: 22px;
+    height: 25px;
+    /* background: url("img/右图标.png") no-repeat center center; */
+    background-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .content_right_gz{
+    width: 100%;
+    height:340px;
+    background: #ade0c7;
+    position: relative;
+
+   }
+   .zuozhe{
+    color: #000;
+    width: 100%;
+    line-height: 30px;
+    background: #ade0c7;
+    padding-left: 10px;
+    font-size: 17px;
+   }
+
+   .right_gz_tx{
+    width: 100%;
+    height: 135px;
+    background: rgb(237 236 236);
+    position: absolute;
+    border-bottom: 35px solid #103a5a;
+   }
+   .gz_tx_yuan1{
+    width: 70px;
+    height: 70px;
+    background: #ffffff;
+    border-radius:50%;
+    position: relative;
+    margin-top: -39px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.gz_tx_yuan2{
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    background: #ade0c7;
+    border-radius:50%;
+    margin: 2.5px 2.5px; 
+}
+.gz_tx_yuan2 img{
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    /* justify-content: center;
+    align-items: center; */
+}
+  .gz_tx_mz h2{
+    width: 100%;
+    background-color: #ade0c7;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+    color:#000;
+    left: auto;
+  } 
+  .gz_tx_qj h6{
+    width: 100%;
+    background-color: #ade0c7;
+    margin-top:5px;
+    text-align: center;
+    color:rgb(78, 78, 78);
+    left: auto;
+  }
+  .gz_tx_zj{
+    float:right;
+    width: 100%;
+    height: 113px;
+    background: #ade0c7;
+    margin-top:225px;
+    text-align: center;
+    color:rgb(78, 78, 78);
+    left: auto;
+  }
+
+  .zj_top{
+    margin-top: 6%;
+    height: 40%;
+    background: #ade0c7; 
+    display: flex;  
+    justify-content: center;
+
+    
+  }
+  .zj_top div{
+    width: 35px;
+    height: 35px;
+    background: #ffffff;
+    border-radius:50%;
+    margin: 4px 10px;
+  }
+
+
+
+
+
+
+
+
+
+/* 联系方式图标样式 */
+  .zj_top_xin1,
+  .zj_top_xin2,
+  .zj_top_xin3{ 
+        float: left;
+        display: block;
+        border: 2px solid rgb(255, 255, 255); 
+        overflow: hidden; 
+        display:inline-block;
+    } 
+    /* 设置ul和li的样式 */
+    .zj_top_xin1 ul , .zj_top_xin1 li,
+    .zj_top_xin2 ul , .zj_top_xin2 li,
+    .zj_top_xin3 ul , .zj_top_xin3 li{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        float: left;
+    } 
+    
+    /* 设置二级菜单绝对定位，并隐藏 */
+    .zj_top_xin1  > li > ul,
+    .zj_top_xin2> li > ul,
+    .zj_top_xin3> li > ul {
+        position: absolute;
+        display: none;
+    }
+  
+    /* 鼠标放在一级菜单上，显示二级菜单 */
+    .zj_top_xin1 > li:hover ul,
+    .zj_top_xin2> li:hover ul,
+    .zj_top_xin3> li:hover ul {
+        display: block;
+        
+    }
+
+    /* 一级菜单 */
+    .zj_top_xin1 >li > a,
+    .zj_top_xin2>li > a ,
+    .zj_top_xin3>li > a{
+        background-color: #000;
+        color: #000;
+        display: block;
+        filter:grayscale(1); /*灰色模式*/
+    }
+    .zj_top_xin1 >li > a:hover,
+    .zj_top_xin2>li > a:hover,
+    .zj_top_xin3>li > a:hover{
+        filter:grayscale(0);
+       
+    }
+    /* 二级菜单 */
+    .zj_top_xin1 >li > ul > li > a,
+    .zj_top_xin2>li > ul > li > a,
+    .zj_top_xin3>li > ul > li > a {
+        border-top: none;
+        display: block;
+    }
+    .zj_top_xin1>li>ul>li>a>img,
+    .zj_top_xin2>li>ul>li>a>img,
+    .zj_top_xin3>li>ul>li>a>img{
+        width: 150px;
+        height: 150px;
+        margin-top: -210px;
+    }
+    
+    .zj_top_xin2>li>ul>li>a>img{
+        margin-left: -58px;
+    }
+    .zj_top_xin3>li>ul>li>a>img{
+
+        margin-left: -116px;
+    }
+ 
+    .zj_bottom{
+    width: 100%;
+    height: 72%;
+    display: flex;
+    border-bottom: 15px solid rgb(237, 236, 236);
+  }
+.zj_bottom_zj{
+    width: 33.33%;
+    height: 100%;
+    background: #ade0c7;
+    font-size: 15px;
+}
+.z_j{
+    margin:6px auto;
+    font-size: 16px;
+}
+/* 页底 */
+#wd{
+        max-width: 100%;
+        height:180px;
+        background-color: rgb(173,224,199);
+        box-shadow: 0px -3px 5px 1px #dcdcdc inset;  /*盒子阴影：水平阴影 垂直阴影 模糊距离 阴影尺度 阴影颜色 inset(外部阴影)--outset(内部阴影)*/
+        margin: 0% auto;
+        background-repeat: no-repeat;
+        background-position: center;
+		overflow:hidden;
+    }
+    #wd .f,#wd .c,#wd .r{
+        /* height:160px; */
+		float:left;
+    }
+
+    #wd .f,
+    #wd .r{
+		width:30%;
+		}
+	#wd .c{
+		width:40%;  
+	    }   
+@media only screen and (max-width: 700px) {
+
+    #wd{
+        height: 480px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #wd .f,#wd .c,#wd .r{
+        float: none; 
+        width: 100%;
+        height: 160px;
+    }
+
+    #wd .f{
+        line-height: 50px;
+    }
+    #wd .c{
+        line-height: 15px;
+        border-left: hidden;
+    }
+    #wd .r{
+        display: block;
+    }
+} 
+		.r{
+         
+            color:rgb(0, 0, 0);
+            margin:0 auto;
+        }
+        .r_text, .r_title{
+            width:100%;
+        }
+        .f_title,
+	   .r_title{
+   
+		 color: #000000;
+           text-height:10px;
+		   font-size:18px;
+		   font:bold 18px 'arial' ,'sans-serif' , 楷体;
+		   padding-left:1.5em;
+           margin-bottom: 12px;
+		   }
+           .r_text{
+            font-size: 1vw;
+		   	height:42%;
+               line-height: 25px;
+			font: bold 43.5% 'sans-serif' , 宋体;
+			padding-left:2.5em;
+           }
+           .f_column{
+            overflow: hidden;
+            max-width: 100%;
+            width: 100%;
+            height: 100%;
+            float: left;
+           }
+           .f_lanmu{
+            width: 100%;
+            /* height: 103px; */
+            display: flex;
+            float: left;
+           margin-left: 5.5%;
+            flex-wrap: nowrap;
+            overflow: hidden;
+           }
+           .f_lanmu_lm{
+    
+            float: left;
+            width: 27.5%;
+            height: 21.5%;
+            background: rgb(173,224,199);
+            margin:5px;
+            align-items: center;
+            justify-content: center;
+            font: bold 12px 'arial' , 宋体;
+            font-size: 1vw;
+            float: left;
+            
+            /* color: #000; */
+            text-align: center;
+            text-align: center;/*文本水平对齐水平：居中 */
+            line-height:157.5%; /*行高：元素高度*/
+            cursor: pointer;/*光标：指向者*/
+            /* box-shadow: 0px -4px 2px 0px #cae0d5 inset; */
+            overflow: hidden;
+        }
+        .m{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        }
+        .lmtb1::before{
+        float: left;
+        content: "";
+        display: inline-block; 
+        width: 25px;
+        height: 20px;
+        background: url("img/主页图标.png") no-repeat center center;
+        background-size: 20px;
+
+        /* color: #000; */
+        }
+        .lmtb2::before{
+            float: left;
+        content: "";
+        display: inline-block; 
+        width: 25px;
+        height: 20px;
+        background: url("img/网络图标.png") no-repeat center center;
+        background-size: 20px;
+        }
+        .lmtb3::before{
+            float: left;
+        content: "";
+        display: inline-block; 
+        width: 25px;
+        height: 20px;
+        background: url("img/图库图标.png") no-repeat center center;
+        background-size: 25px;
+
+        }
+        .lmtb4::before{
+            float: left;
+        content: "";
+        display: inline-block; 
+        width: 25px;
+        height: 20px;
+        background: url("img/链接图标.png") no-repeat center center;
+        background-size: 30px;
+
+        }
+        .lmtb5::before{
+            float: left;
+        content: "";
+        display: inline-block; 
+        width: 25px;
+        height: 20px;
+        background: url("img/排行图标.png") no-repeat center center;
+        background-size: 20px;
+
+        }
+        .lmtb6::before{
+            float: left;
+        content: "";
+        display: inline-block; 
+        width: 25px;
+        height: 20px;
+        background: url("img/文案图标.png") no-repeat center center;
+        background-size: 18px;
+
+        }
+        .lmtb7::before{
+            float: left;
+        content: "";
+        display: inline-block; 
+        width: 25px;
+        height: 20px;
+        background: url("img/影音图标.png") no-repeat center center;
+        background-size: 45px;
+        }
+        .lmtb8::before{
+            float: left;
+        content: "";
+        display: inline-block; 
+        width: 25px;
+        height: 20px;
+        background: url("img/特效图标.png") no-repeat center center;
+        background-size: 30px;
+
+        }
+        .lmtb9::before{
+            float: left;
+        content: "";
+        display: inline-block; 
+        width: 25px;
+        height: 20px;
+        background: url("img/关于图标.png") no-repeat center center;
+        background-size: 20px;
+
+        }
+        
+        .c_contact{
+            display: flex;
+            width: 100%;
+            height: 100%;
+            background: rgb(173,224,199);
+        }
+
+        .contact1,.contact2,.contact3{
+            float: left;
+            width: 110px;
+            background: rgb(173,224,199);
+            margin-top: 18px;
+        }
+        .contact1{
+            margin-left: 14%;
+        }
+        .contact2{
+            margin-left:20px;
+            margin-right: 20px;
+        }
+        .contact3{
+            margin-right: 14%;
+        }
+        .contact_lx{
+            float: left; 
+            background: rgb(173,224,199);
+           
+        }
+        
+        .name{
+            float: left;
+            width: 100%;
+            /* height: 15%; */
+            background: rgb(173,224,199);
+            text-align: center;
+            overflow: hidden;
+            margin: 3px 0;
+            font-size: 1vw;
+        }
+        .bq{
+            font-size: 1.2vw;
+            float: left;
+            width: 100%;
+            /* height: 50px; */
+            text-align: center;
+            background: rgb(255, 255, 255);
+            padding: 10px 0;
+        }
+        .f_lanmu_lm a{
+            color: rgb(0, 0, 0);
+            }
+            .f_lanmu_lm a:hover{
+                color: #0073ff;
+            } 
+</style>
+<style>  
+    html,  
+    body {  
+        margin: 0;  
+        padding: 0;  
+        /* background-color: #000000;   */
+/*禁止文字被选中*/ 
+        -moz-user-select: none;  
+/*火狐*/ 
+        -webkit-user-select: none;  
+/*webkit浏览器*/ 
+        -ms-user-select: none;  
+/*IE10*/ 
+        -khtml-user-select: none;  
+/*早期浏览器*/ 
+        user-select: none;  
+        /* overflow: hidden;   */
+    }  
+    .nr_znr_ba{
+        width: 100%;
+        height: 500px;
+        background: #000;
+    }
+    .box {  
+        position: relative;  
+        height: 500px;  
+        width: 100%;  
+        margin: 50px auto;  
+        transform-style: preserve-3d;  
+        perspective: 2000px;  
+    }  
+
+    .di {  
+        position: absolute;  
+        left: 50%;  
+        top: 50%;  
+        height: 60px;  
+        width: 60px;  
+        transform: translate(-50%, -50%) rotatex(70deg);  
+        transform-style: preserve-3d;  
+    }  
+
+    .z {  
+    /* background: rgb(0, 0, 0); */
+        position: relative;  
+        height: 60px;  
+        width: 60px;  
+        border-radius: 50%;  
+        transform-style: preserve-3d;  
+/*transform: rotatez(1deg);*/ 
+    }  
+
+    u{  
+        margin: -58% -39%;
+        position: absolute;  
+        top: 0;  
+/*为了保证圆心在父盒子中心，父盒子旋转时圆心稳定，所以设置left*/ 
+        left: 25px;  
+        height: 120px;  
+        width: 60px;  
+        border: 2px solid #0CF;  /* 边框颜色*/ 
+        background: #0cf;
+        box-sizing: border-box;  
+        /*background-color:#ffffff;*/  
+        background-size: cover;  
+        background-position: center;  
+        background-repeat: no-repeat;  
+/*opacity: .7;*/ 
+        font-size: 10px;  
+        line-height: 200px;  
+        text-align: center;  
+/*box-shadow: 0 0 100px #16ff8b;*/ 
+/*倒影，不兼容*/ 
+        -webkit-box-reflect: below 10px -webkit-linear-gradient(top, rgba(250, 250, 250, 0), rgba(250, 250, 250, .0) 30%, rgba(250, 250, 250, 0.5));  
+        box-reflect: below 10px -webkit-linear-gradient(top, rgba(250, 250, 250, 0), rgba(250, 250, 250, .0) 30%, rgba(250, 250, 250, 0.5));  
+/*backface-visibility: hidden;*/ 
+    }  
+</style>
+<!-- 主内容                -->
+<body onselectstart="return false">
+
+   <!-- 内容 -->
+<div class="ip">
+    <div class="in_content" >
+        
+        <div class="content_left">
+                    <div class="nr">
+                    <!-- <div class="nr_i"><img src="img/1.png" alt="图片"></div> -->
+                        <!-- <div class="nr_right"> -->
+                            <h3 class="nr_bt">——3D旋转相册——</h3>
+                            <span class="nr_sj">
+                                <a href="馆主.html" rel="bookmark" title="馆主";>
+                                    <div class="sj_yuan1">
+                                        <div class="sj_yuan2">
+                                    <img src="img/guanzhu.png" alt="馆主" >
+                                    </div></div>
+                            </a>
+                                <span class="gxsj1"><span class="gxsj2"></span>2022年9月30日</span>
+                                <span class="gxsj9"><span class="gxsj10"></span>35字</span>
+                                <span class="gxsj5"><span class="gxsj6"></span>2</span>
+                                <div class="gxsj_r"><span class="gxsj7"><span class="gxsj8"></span>5</span></div>
+                                <a href="特效.html"><span class="gxsj3"><span class="gxsj4"></span>特效</span></a>
+                        </span>
+                            <samp class="nr_znr">
+                                <p>3D旋转相册展示效果：由12张图片形成一个闭环带，实现图片可拖动旋转效果。</p>
+                                <div class="nr_znr_ba">
+                                <div class="box">  
+                                    <div class="di">  
+                                      <div class="z">  
+                                           <u><img src="images11/1.jpg" width="100%" height="100%"></u>
+                                           <u><img src="images11/2.jpg" width="100%" height="100%"></u>
+                                           <u><img src="images11/3.jpg" width="100%" height="100%"></u>
+                                           <u><img src="images11/4.jpg" width="100%" height="100%"></u>
+                                           <u><img src="images11/5.jpg" width="100%" height="100%"></u>
+                                           <u><img src="images11/6.jpg" width="100%" height="100%"></u>
+                                           <u><img src="images11/7.jpg" width="100%" height="100%"></u>
+                                           <u><img src="images11/8.jpg" width="100%" height="100%"></u>
+                                           <u><img src="images11/9.jpg" width="100%" height="100%"></u>
+                                           <u><img src="images11/10.jpg" width="100%" height="100%"></u>
+                                           <u><img src="images11/11.jpg" width="100%" height="100%"></u>
+                                           <u><img src="images11/12.jpg" width="100%" height="100%"></u>
+                                
+                                           
+                                        </div>  
+                                    </div>  
+                                </div> 
+                                </div> 
+                                <script>  
+                                    window.onload = function () {  
+                                        setPs();  
+                                        move();  
+                                        drop();  
+                                    }  
+                                 //给每个p标签设置位置 
+                                 function setPs() {  
+                                 var ps = document.getElementsByTagName('u');  
+                                 for (var i = 0; i < ps.length; i++) {  
+                                            ps[i].style.transform = 'rotatex(-90deg) rotatey(' + i * 30 + 'deg) translatez(200px)' 
+                                        }  
+                                    }  
+                                 //鼠标拖动旋转 
+                                 function move() {  
+                                 var zBox = document.querySelector('.z');  
+                                 var xBox = document.querySelector('.di');  
+                                 //声明计算鼠标移动速度用的变量 
+                                 var speedTimer = null;  
+                                 var speedX = 0;  
+                                 var speedY = 0;  
+                                 //声明记录旋转角度的两个变量 
+                                 var xDegNow = 90;  
+                                 var zDegNow = 0;  
+                                 //声明变量记录要旋转的角度 
+                                 var xDegDistance = 0;  
+                                 var zDegDistance = 0;  
+                                 //声明变量记录是否发生鼠标移动事件 
+                                 var isMove = false;  
+                                        window.onmousedown = function (e) {  
+                                 //鼠标按下 
+                                 //清除过渡属性 
+                                            xBox.style.transition = '';  
+                                            zBox.style.transition = '';  
+                                 //记录按下的坐标以及计算速度的初始坐标 
+                                 var xstart = e.clientX;  
+                                 var speedX_start = xstart;  
+                                 var ystart = e.clientY;  
+                                 var speedY_start = ystart;  
+                                 //记录用来计算速度的初始时间 
+                                 var tstart = new Date().getTime();  
+                                 var tnow = tstart;  
+                                 //设置计时器更新计算速度的当时时间 
+                                            speedTimer = setInterval(function () {  
+                                                tnow = new Date().getTime();  
+                                            },10)  
+                                            window.onmousemove = function (e) {  
+                                 //鼠标移动 
+                                                isMove = true;  
+                                 //记录当时的坐标计算距离 
+                                 var xnow = e.clientX;  
+                                 var ynow = e.clientY;  
+                                 var xDistance = xnow - xstart;  
+                                 var yDistance = ynow - ystart;  
+                                 //如果计时超过一定时间（10毫秒），计算速度 
+                                 if (tnow - tstart >= 10) {  
+                                 //速度=（现在的坐标-初始坐标）/（现在时间-初始时间） 
+                                                    speedX = (xnow - speedX_start) / (tnow - tstart);  
+                                                    speedY = (ynow - speedY_start) / (tnow - tstart);  
+                                 //让初始时间和坐标等于现在的时间和坐标 
+                                                    tstart = tnow;  
+                                                    speedX_start = xnow;  
+                                                    speedY_start = ynow;  
+                                                }  
+                                 //把鼠标移动距离计算成角度后设置到页面上 
+                                                zDegDistance = zDegNow - (xDistance / 10);  
+                                                zBox.style.transform = 'rotatez(' + zDegDistance + 'deg)';  
+                                                xDegDistance = xDegNow - (yDistance / 10);  
+                                                xDegDistance = xDegDistance > 179 ? 179 : xDegDistance < 1 ? 1 : xDegDistance;  
+                                                xBox.style.transform = 'translate(-50%,-50%) rotatex(' + xDegDistance + 'deg)';  
+                                            };  
+                                        };  
+                                        window.onmouseup = function (e) {  
+                                 //鼠标松开 
+                                 //清除计时器 清除鼠标移动事件 
+                                            clearTimeout(speedTimer);  
+                                            window.onmousemove = null;  
+                                 //判断如果发生移动 
+                                 if (isMove) {  
+                                 //添加过渡属性 
+                                                xBox.style.transition = 'all 0.5s ease-out';  
+                                                zBox.style.transition = 'all 0.5s ease-out';  
+                                 //根据速度计算目标角度，设置到页面上 
+                                                zDegDistance = zDegDistance - (speedX * 10);  
+                                                zBox.style.transform = 'rotatez(' + zDegDistance + 'deg)';  
+                                                xDegDistance = xDegDistance - (speedY * 10);  
+                                                xDegDistance = xDegDistance > 179 ? 179 : xDegDistance < 1 ? 1 : xDegDistance;  
+                                                xBox.style.transform = 'translate(-50%,-50%) rotatex(' + xDegDistance + 'deg)';  
+                                 //记录当前角度的值更新 
+                                                xDegNow = xDegDistance;  
+                                                zDegNow = zDegDistance;  
+                                 //用到的变量重置 
+                                                isMove = false;  
+                                                speedX = 0;  
+                                                speedY = 0;  
+                                                xDegDistance = 0;  
+                                                zDegDistance = 0;  
+                                            }  
+                                        };  
+                                 
+                                    }  
+                                 //鼠标拖拽文件 
+                                 function drop() {  
+                                 //取消鼠标拖拽文件进入窗口的默认行为 
+                                        window.ondragover = function (e) {  
+                                            e.preventDefault();  
+                                        }  
+                                        window.ondrop = function (e) {  
+                                            e.preventDefault();  
+                                        }  
+                                 //添加拖拽到p标签的事件 
+                                 var ps = document.getElementsByTagName('u');  
+                                 for (var i = 0; i < ps.length; i++) {  
+                                            ps[i].index = i;  
+                                            ps[i].ondrop = function (e) {  
+                                 var w = new FileReader();  
+                                                w.index = this.index;  
+                                                w.readAsDataURL(e.dataTransfer.files[0]);  
+                                                w.onload = function () {  
+                                                    ps[this.index].style.backgroundImage = 'url(' + w.result + ')';  
+                                                    ps[this.index].innerHTML = '';  
+                                                }  
+                                            }  
+                                        }  
+                                    }  
+                                </script>  
+                            
+                        <!-- </samp> -->
+                        </div>
+                        <a href="特效.html"><span class="nr_sj2">
+                            <span class="gxsj11"><span class="gxsj12"></span>查看更多</span></span>
+                        </a>
+                  
+                    <div class="ciyun1">
+                        <div class="btn1"><a href="#"><li>3D相册</li></a></div>
+                        <div class="btn2"><a href="#"><li>特效收藏</li></a></div>
+                        <div class="btn3"><a href="#"><li>拖动旋转</li></a></div>
+                        <div class="btn4"><a href="#"><li>展示效果</li></a></div>          
+                        <div class="btn5"><a href="#"><li>效果设计</li></a></div>
+                    </div>
+                    <div class="nr_sj3">
+                        <a href="特效.html" class="sj3_btn1">
+                            <span class="gxsj13"><span class="gxsj14"></span>上一篇</span>
+                            返回特效
+                        </span></a>
+                        <a href="#" class="sj3_btn1">
+                            <span class="gxsj15">下一篇<span class="gxsj16"></span></span>
+                            已是最新篇
+                        </span></a>
+                    </div>
+                <!-- </div> -->
+        </div>
+        <!-- 右样式 -->
+        <div class="content_right">
+            <div class="content_right_gz">
+                <!-- <div class="zuozhe">作者</div> -->
+                <div class="right_gz_tx">
+                    <img src="img/2.png" width="100%" height="135px" alt="图片">
+                    <!-- 圆 -->
+                    <div class="gz_tx_yuan1">
+                        <div class="gz_tx_yuan2">
+                       <img src="img/guanzhu.png" >
+                    </div></div>
+                    <div class="gz_tx_mz"><h2>lsww11</h2></div>
+                    <div class="gz_tx_qj"><h6>——特效收藏家——</h6></div>
+                    <!-- <div class="gz_tx_zj"></div> -->
+                </div>
+                <div class="gz_tx_zj">
+                    <div class="zj_top">
+                       <!-- 微信图标 -->
+                        <div class="zj_top_xin1">
+                                <li>
+                                    <a href="#"><img src="img/微信图标.jpg" width="100%" height="100%"></a>
+                                    <ul>
+                                        <li><a href="#"><img src="img/wx.jpg" alt="weixin"></a></li>
+                                    </ul>
+                                </li>
+                        </div>
+                            <!-- qq图标  -->
+                        <div class="zj_top_xin2">
+                            <li>
+                                <a href="#"><img src="img/qq图标.jpg" width="100%" height="100%"></a>
+                                <ul>
+                                    <li><a href="#"><img src="img/qq.jpg" alt="qq"></a></li>
+                                </ul>
+                            </li>
+                        </div>
+                        <!-- 微博图标 -->
+                        <div class="zj_top_xin3">
+                            <li>
+                                <a href="#"><img src="img/微博图标.jpg" width="100%" height="100%"></a>
+                                <ul>
+                                    <li><a href="#"><img src="img/weibo.png" alt="qq"></a></li>
+                                </ul>
+                            </li>
+                        </div>
+                   </div>
+                   <!-- 总结内容 -->
+                    <div class="zj_bottom">
+                        <din class="zj_bottom_zj"><div class="z_j">文章</div>22</din>
+                        <din class="zj_bottom_zj"><div class="z_j">留言</div>14</din>
+                        <din class="zj_bottom_zj"><div class="z_j">访客</div>45</din>
+                    </div>
+                </div>
+            </div>
+            <div class="axs"></div>  
+        </div>
+        
+    </div>
+ </div> 
+<!-- 页底 -->
+<div>
+    <div id="wd" >
+        <div class="f">
+            <div class="f_column">
+                <h3 class="f_title">其他栏目</h3>
+            <div class="f_lanmu">
+                <ul class="m">
+                    <div class="f_lanmu_lm"><a href="首页.html"><samp class="lmtb1"></samp><li>网站首页</li></a></div>
+                    <div class="f_lanmu_lm"><a href="https://www.baidu.com/"><samp class="lmtb2"></samp><li>全球网络</li></a></div>  
+                    <div class="f_lanmu_lm"><a href="图库.html"><samp class="lmtb3"></samp><li>图片图库</li></a></div>
+                    <div class="f_lanmu_lm"><a href="友情链接.html"><samp class="lmtb4"></samp><li>友情链接</li></a></div>
+                    <div class="f_lanmu_lm"><a href="访客排行.html"><samp class="lmtb5"></samp><li>访客排行</li></a></div>
+                    <div class="f_lanmu_lm"><a href="文案.html"><samp class="lmtb6"></samp><li>随笔文案</li></a></div>
+                    <div class="f_lanmu_lm"><a href="视频.html"><samp class="lmtb7"></samp><li>影音专区</li></a></div> 
+                    <div class="f_lanmu_lm"><a href="特效.html"><samp class="lmtb8"></samp><li>特效专区</li></a></div>
+                    <div class="f_lanmu_lm"><a href="关于网站.html"><samp class="lmtb9"></samp><li>关于网站</li></a></div>
+                </ul>
+            </div>
+            </div>
+
+        </div>
+        <div class="c">
+            <div class="c_contact">
+                <div class="contact1">
+                    <div class="contact_lx"><img src="img/wx.jpg" style="width:100% ; height: 100%;"></div>
+                    <div class="name">我的微信</div>
+                </div>
+                <div class="contact2">
+                    <div class="contact_lx"><img src="img/qq.jpg" style="width:100% ; height:100%;"></div>
+                    <div class="name">我的QQ</div>
+                </div>
+                <div class="contact3">
+                    <div class="contact_lx"><img src="img/weibo.png" style="width:100% ; height:100%;"></div>
+                    <div class="name">官方微博</div>
+                </div>
+        </div></div>
+        <div class="r">
+            <h3 class="r_title">版权声明</h3>
+                <div class="r_text">本站原创内容版权规定，转载请注明出处。<br>
+                <p>本站部分资源收集于网络，只做学习和交流使用，</p>
+                <p>未经原作者允许不得转载本文内容，否则将视为侵权,</p>
+                <p>版权归原作者所有。</p>
+                </div>
+        </div>
+    </div>
+    <div class="bq">
+        <p>Copyright © 2022 - present 忘忧君馆 版权所有</p>
+            <p style="text-align: center;">本站已稳定运行：<span id="htmer_time" style="color: #09c;">00年00天00时00分00秒</span>
+    <script>
+    function secondToDate(second) {
+    if (!second) {
+        return 0;
+    }
+    var time = new Array(0, 0, 0, 0, 0);
+    if (second >= 365 * 24 * 3600) {
+        time[0] = parseInt(second / (365 * 24 * 3600));
+        second %= 365 * 24 * 3600;
+    }
+    if (second >= 24 * 3600) {
+        time[1] = parseInt(second / (24 * 3600));
+        second %= 24 * 3600;
+    }
+    if (second >= 3600) {
+        time[2] = parseInt(second / 3600);
+        second %= 3600;
+    }
+    if (second >= 60) {
+        time[3] = parseInt(second / 60);
+        second %= 60;
+    }
+    if (second > 0) {
+        time[4] = second;
+    }
+    return time;
+    }
+    function setTime() {
+        /*此处为网站的创建时间*/
+    var create_time = Math.round(new Date(Date.UTC(2022, 08, 24, 00, 00, 00)).getTime() / 1000);
+    var timestamp = Math.round((new Date().getTime() + 8 * 60 * 60 * 1000) / 1000);
+    currentTime = secondToDate((timestamp - create_time));
+    currentTimeHtml = currentTime[0] + '年' + currentTime[1] + '天'
+            + currentTime[2] + '时' + currentTime[3] + '分' + currentTime[4]
+            + '秒';
+    document.getElementById("htmer_time").innerHTML = currentTimeHtml;
+    }
+    setInterval(setTime, 1000);
+    </script></p>								
+    </div>
+</div>
+</body>
+</html>
+
+
+
+
+

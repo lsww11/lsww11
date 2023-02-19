@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_Recordset1" value="name:昵称;datatype:blob,name:账号;datatype:string,name:密码;datatype:int,name:邮箱;datatype:string,name:年龄;datatype:string,name:性别;datatype:blob" />
+</info>
